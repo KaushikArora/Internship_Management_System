@@ -1,0 +1,62 @@
+/* ===== Internship HQ — Global Styles ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;-webkit-font-smoothing:antialiased}
+
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
+
+/* Utility classes */
+.glass-card{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(226,232,240,.5)}
+.hero-gradient{background:radial-gradient(circle at top right,#dde1ff 0%,#f8f9ff 100%)}
+.bento-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.strength-gradient{background:linear-gradient(90deg,#0052FF 0%,#6366F1 100%)}
+.progress-gradient{background:linear-gradient(90deg,#0052FF 0%,#6366F1 100%)}
+.neon-glow-primary{box-shadow:0 0 20px rgba(0,82,255,.4)}
+
+/* Animations */
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+.floating{animation:float 4s ease-in-out infinite}
+
+@keyframes soft-pulse{0%,100%{box-shadow:0 0 0 0 rgba(13,148,136,.4)}70%{box-shadow:0 0 0 8px rgba(13,148,136,0)}}
+.status-pulse{animation:soft-pulse 2s infinite}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .4s ease-out}
+
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.slide-up{animation:slideUp .5s ease-out}
+
+@keyframes countUp{from{opacity:0}to{opacity:1}}
+
+/* Code Editor */
+.code-editor{font-family:'JetBrains Mono','Fira Code',monospace;background-color:#0b1c30}
+.syntax-keyword{color:#c678dd}.syntax-func{color:#61afef}.syntax-string{color:#98c379}
+.syntax-comment{color:#5c6370;font-style:italic}.syntax-number{color:#d19a66}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar{width:4px}
+.custom-scrollbar::-webkit-scrollbar-track{background:transparent}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:#E2E8F0;border-radius:10px}
+
+/* Dark IDE scrollbar */
+.dark-ide-scrollbar::-webkit-scrollbar-thumb{background:#334155}
+
+/* Stepper */
+.stepper-line{width:2px;height:calc(100% - 32px);position:absolute;left:15px;top:32px;z-index:0}
+
+/* 3D cards */
+.perspective-1000{perspective:1000px}
+.card-3d-rotate{transition:transform .5s cubic-bezier(.175,.885,.32,1.275);transform-style:preserve-3d}
+
+/* Focus styles */
+input:focus,select:focus,textarea:focus{outline:none;border-color:#0052FF!important;box-shadow:0 0 0 4px rgba(0,82,255,.1)}
+
+/* Page transitions */
+.page-enter{animation:fadeIn .3s ease-out}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;z-index:9999;padding:16px 24px;border-radius:12px;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.15);transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(.175,.885,.32,1.275)}
+.toast.show{transform:translateY(0);opacity:1}
+.toast-success{background:#0D9488;color:#fff}
+.toast-error{background:#ba1a1a;color:#fff}
+.toast-info{background:#0052FF;color:#fff}
